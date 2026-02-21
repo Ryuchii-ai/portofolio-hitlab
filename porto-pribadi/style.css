@@ -284,19 +284,42 @@ footer {
   transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* Responsive */
+/* Responsive untuk HP */
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .dark-toggle {
+    margin-top: 1rem;
+    align-self: flex-end;
+  }
+
   #hero {
     flex-direction: column;
     text-align: center;
   }
+
   .hero-text {
     padding-right: 0;
   }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
+
   .contact-container {
     flex-direction: column;
   }
