@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Pribadi</title>
+  <!-- Link Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Link ke file CSS eksternal -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome untuk ikon sosial media -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -14,6 +20,7 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#skills">Skill</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
     </nav>
@@ -22,17 +29,35 @@
   <!-- Hero Section -->
   <main>
     <section id="hero">
-      <h2>Raul Aulia Khatami</h2>
-      <p>Belajar dan Berkarya di Dunia IT</p>
-      <img src="profil.jpg" alt="Foto Profil Raul Aulia Khatami" width="200">
+      <div class="hero-text">
+        <h2>Hi, I'm Raul Aulia Khatami</h2>
+        <p>Calon Full Stack Developer yang bersemangat membangun pengalaman web modern. Saya senang mengubah ide kompleks menjadi solusi sederhana dan indah.</p>
+        <div class="hero-buttons">
+          <a href="https://vercel.com/rauls-projects-b2eb2df4" class="btn-primary" target="_blank">View My Work</a>
+          <a href="#contact" class="btn-secondary">Hubungi Saya</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://github.com/Ryuchii-ai/" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/raul-aulia-khatami-05107237a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/raulkhtmi_?utm_source=qr&igsh=MXYwaHU3eTIyNno4dQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="profil.jpg" alt="Foto Profil Raul Aulia Khatami">
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
       <h2>Tentang Saya</h2>
       <p>
-        Saya seorang mahasiswa   yang bersemangat mempelajari teknologi dan pemrograman.
-        Motivasi saya adalah terus berkembang dan berkontribusi dalam dunia IT.
+        Saya Raul Aulia Khatami, seorang mahasiswa yang tertarik mendalami dunia teknologi dan pemrograman. 
+        Perjalanan saya dimulai dari rasa ingin tahu sederhana tentang bagaimana sebuah website bekerja, 
+        hingga berkembang menjadi semangat untuk membangun aplikasi yang bermanfaat. 
+        Saya percaya bahwa teknologi bukan hanya soal kode, tapi juga tentang menciptakan pengalaman 
+        yang memudahkan orang lain. 
+        Motivasi saya adalah terus belajar, beradaptasi dengan tren terbaru, dan berkontribusi dalam 
+        komunitas IT agar bisa memberikan dampak positif.
       </p>
     </section>
 
@@ -67,21 +92,58 @@
       </table>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="project-container">
+        <div class="project-card">
+          <h3>Demo Website</h3>
+          <p>Website yang saya deploy di Vercel untuk menampilkan hasil karya.</p>
+          <a href="https://vercel.com/rauls-projects-b2eb2df4" target="_blank">Lihat Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-      <h2>Kontak Saya</h2>
-      <form action="#" method="post">
-        <label for="nama">Nama:</label><br>
-        <input type="text" id="nama" name="nama" required><br><br>
+      <h2>Hubungi Saya</h2>
+      <p>Have a project in mind? Let's work together!</p>
+      <div class="contact-container">
+        <!-- Form -->
+        <div class="contact-form">
+          <form action="#" method="post">
+            <label for="nama">Name</label>
+            <input type="text" id="nama" name="nama" placeholder="Your Name" required>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
 
-        <label for="pesan">Pesan:</label><br>
-        <textarea id="pesan" name="pesan" rows="5" required></textarea><br><br>
+            <label for="pesan">Message</label>
+            <textarea id="pesan" name="pesan" rows="5" placeholder="Your message here..." required></textarea>
 
-        <button type="submit">Submit</button>
-      </form>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Email</h3>
+          <p>raulkhatami217@example.com</p>
+
+          <h3>Phone</h3>
+          <p>+62 857-7524-5360</p>
+
+          <h3>Location</h3>
+          <p>Jakarta, Indonesia</p>
+
+          <h3>Follow Me</h3>
+          <div class="social-icons">
+            <a href="https://github.com/Ryuchii-ai/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/raul-aulia-khatami-05107237a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/raulkhtmi_?utm_source=qr&igsh=MXYwaHU3eTIyNno4dQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
