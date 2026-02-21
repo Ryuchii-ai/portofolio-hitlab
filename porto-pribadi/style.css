@@ -41,6 +41,36 @@ nav a:hover {
   color: cyan;
 }
 
+/* Tombol Dark Mode */
+.dark-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: cyan;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+
+.dark-toggle:hover {
+  color: #fff;
+}
+
+/* Dark Mode Style */
+.dark-mode {
+  background: #f4f4f4;
+  color: #222;
+}
+
+.dark-mode header {
+  background: rgba(255,255,255,0.9);
+}
+
+.dark-mode .project-card,
+.dark-mode .skill-card {
+  background: rgba(0,0,0,0.05);
+}
+
 /* Hero Section */
 #hero {
   display: flex;
@@ -246,21 +276,6 @@ section {
 }
 .contact-info .social-icons {
   margin-top: 0.5rem;
-}
-
-/* Dark Mode */
-.dark-mode {
-  background: #f4f4f4;
-  color: #222;
-}
-
-.dark-mode header {
-  background: rgba(255,255,255,0.9);
-}
-
-.dark-mode .project-card,
-.dark-mode .skill-card {
-  background: rgba(0,0,0,0.05);
 }
 
 /* Footer */

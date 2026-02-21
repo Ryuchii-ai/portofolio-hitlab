@@ -1,10 +1,14 @@
 // Dark Mode Toggle
-const toggleBtn = document.createElement("button");
-toggleBtn.textContent = "Toggle Dark Mode";
-document.querySelector("header").appendChild(toggleBtn);
+const darkToggle = document.getElementById("darkModeToggle");
 
-toggleBtn.addEventListener("click", () => {
+darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+  // Ganti ikon sesuai mode
+  if (document.body.classList.contains("dark-mode")) {
+    darkToggle.textContent = "☀️";
+  } else {
+    darkToggle.textContent = "🌙";
+  }
 });
 
 // Form Handling
