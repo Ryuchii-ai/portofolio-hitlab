@@ -23,10 +23,8 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
-  <!-- Tombol Dark Mode -->
-    <button id="darkModeToggle" class="dark-toggle">
-      🌙
-    </button>
+      <!-- Tombol Dark Mode -->
+      <button id="darkModeToggle" class="dark-toggle">🌙</button>
     </nav>
   </header>
 
@@ -42,8 +40,8 @@
         </div>
         <div class="social-icons">
           <a href="https://github.com/Ryuchii-ai/" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/raul-aulia-khatami-05107237a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/raulkhtmi_?utm_source=qr&igsh=MXYwaHU3eTIyNno4dQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/raul-aulia-khatami-05107237a" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/raulkhtmi_" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
       <div class="hero-image">
@@ -55,18 +53,18 @@
     <section id="about">
       <h2>Tentang Saya</h2>
       <p>
-        Saya Raul Aulia Khatami, seorang mahasiswa yang tertarik mendalami dunia teknologi dan pemrograman. 
-        Perjalanan saya dimulai dari rasa ingin tahu sederhana tentang bagaimana sebuah website bekerja, 
-        hingga berkembang menjadi semangat untuk membangun aplikasi yang bermanfaat. 
-        Saya percaya bahwa teknologi bukan hanya soal kode, tapi juga tentang menciptakan pengalaman 
-        yang memudahkan orang lain. 
-        Motivasi saya adalah terus belajar, beradaptasi dengan tren terbaru, dan berkontribusi dalam 
+        Saya Raul Aulia Khatami, seorang mahasiswa yang tertarik mendalami dunia teknologi dan pemrograman.
+        Perjalanan saya dimulai dari rasa ingin tahu sederhana tentang bagaimana sebuah website bekerja,
+        hingga berkembang menjadi semangat untuk membangun aplikasi yang bermanfaat.
+        Saya percaya bahwa teknologi bukan hanya soal kode, tapi juga tentang menciptakan pengalaman
+        yang memudahkan orang lain.
+        Motivasi saya adalah terus belajar, beradaptasi dengan tren terbaru, dan berkontribusi dalam
         komunitas IT agar bisa memberikan dampak positif.
       </p>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills"> 
+    <section id="skills">
       <h2>Skill Saya</h2>
       <div class="skills-container">
         <div class="skill-card">
@@ -82,6 +80,7 @@
           <p>Git, GitHub</p>
         </div>
       </div>
+    </section>
 
     <!-- Projects Section -->
     <section id="projects">
@@ -130,8 +129,8 @@
           <h3>Follow Me</h3>
           <div class="social-icons">
             <a href="https://github.com/Ryuchii-ai/" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/raul-aulia-khatami-05107237a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/raulkhtmi_?utm_source=qr&igsh=MXYwaHU3eTIyNno4dQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/raul-aulia-khatami-05107237a" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/raulkhtmi_" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -142,5 +141,42 @@
   <footer>
     <p>&copy; 2026 Portofolio Pribadi - Raul Aulia Khatami</p>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const darkToggle = document.getElementById("darkModeToggle");
+
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      // Ganti ikon sesuai mode
+      if (document.body.classList.contains("dark-mode")) {
+        darkToggle.textContent = "☀️"; // Light mode icon
+      } else {
+        darkToggle.textContent = "🌙"; // Dark mode icon
+      }
+    });
+
+    // Smooth Scroll untuk menu navigasi
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    // Form Handling
+    const form = document.querySelector("#contact form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const nama = document.querySelector("#nama").value;
+      const pesanKonfirmasi = document.createElement("p");
+      pesanKonfirmasi.textContent = `Halo ${nama}, pesan Anda berhasil terkirim!`;
+      form.appendChild(pesanKonfirmasi);
+    });
+  </script>
 </body>
 </html>
