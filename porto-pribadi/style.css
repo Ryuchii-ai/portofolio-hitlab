@@ -11,6 +11,7 @@ body {
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   color: #fff;
   line-height: 1.6;
+  transition: background 0.5s ease, color 0.5s ease; /* smooth transition */
 }
 
 /* Header */
@@ -22,9 +23,14 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 header h1 {
   font-size: 1.5rem;
+}
+nav {
+  display: flex;
+  align-items: center;
 }
 nav ul {
   list-style: none;
@@ -47,28 +53,36 @@ nav a:hover {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: rgb(0, 0, 0);
+  color: cyan;
   margin-left: 1rem;
   transition: color 0.3s;
 }
-
 .dark-toggle:hover {
   color: #fff;
 }
 
 /* Dark Mode Style */
 .dark-mode {
-  background: #f4f4f4;
-  color: #222;
+  background: #111; /* hitam pekat */
+  color: #eee;      /* teks terang */
 }
-
 .dark-mode header {
-  background: rgba(255,255,255,0.9);
+  background: rgba(20,20,20,0.9);
 }
-
+.dark-mode nav a {
+  color: #eee;
+}
 .dark-mode .project-card,
 .dark-mode .skill-card {
-  background: rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.05);
+}
+.dark-mode .btn-primary {
+  background: #444;
+  color: #eee;
+}
+.dark-mode .btn-secondary {
+  border: 2px solid #eee;
+  color: #eee;
 }
 
 /* Hero Section */
@@ -79,6 +93,7 @@ nav a:hover {
   padding: 5rem 2rem;
   max-width: 1100px;
   margin: auto;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 .hero-text {
   flex: 1;
@@ -150,21 +165,7 @@ section {
   max-width: 1000px;
   margin: 3rem auto;
   padding: 1rem;
-}
-
-/* Skill table */
-#skills table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(255,255,255,0.1);
-}
-#skills th, #skills td {
-  padding: 1rem;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-#skills th {
-  background: rgba(0,0,0,0.5);
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* Projects Section */
@@ -179,7 +180,7 @@ section {
   border-radius: 12px;
   text-align: center;
   backdrop-filter: blur(6px);
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s, color 0.5s ease;
 }
 .project-card:hover {
   transform: translateY(-5px);
@@ -207,26 +208,22 @@ section {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-
 .skill-card {
   background: rgba(255,255,255,0.1);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
   backdrop-filter: blur(6px);
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s, color 0.5s ease;
 }
-
 .skill-card:hover {
   transform: translateY(-5px);
   background: rgba(255,255,255,0.2);
 }
-
 .skill-card h3 {
   margin-bottom: 0.5rem;
   color: cyan;
 }
-
 .skill-card p {
   color: #ddd;
   font-weight: bold;
@@ -284,6 +281,7 @@ footer {
   padding: 1rem;
   background: rgba(0,0,0,0.8);
   margin-top: 3rem;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* Responsive */
