@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #000;
+}
+
+input {
+  width: 65%;
+  padding: 8px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button.add {
+  background-color: #007bff;
+  color: white;
+}
+
+.filters button {
+  background-color: #e0e0e0;
+  margin: 5px;
+}
+
+.filters button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+li.completed {
+  background-color: #d4edda; /* hijau muda */
+}
+
+li:not(.completed) {
+  background-color: #f9f9f9; /* abu-abu muda */
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.actions button {
+  margin-left: 5px;
+}
+
+.actions button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.actions button.complete {
+  background-color: #28a745;
+  color: white;
+}
+
+.footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer button {
+  background-color: #dc3545;
+  color: white;
+}
