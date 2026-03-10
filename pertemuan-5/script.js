@@ -1,51 +1,42 @@
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const API_URL = "http://localhost:3000/api/todos";
 let currentFilter = "all";
+let tasks = [];
 
+// Ambil data dari server
+async function fetchTodos() {
+  const res = await fetch(API_URL);
+  tasks = await res.json();
+  renderTasks();
+}
+
+// Render daftar tugas
 function renderTasks() {
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = "";
 
   let filteredTasks = tasks.filter(task => {
-    if (currentFilter === "active") return !task.completed;
-    if (currentFilter === "completed") return task.completed;
+    if (currentFilter === "active") return !task.done;
+    if (currentFilter === "completed") return task.done;
     return true; // all
   });
 
-  filteredTasks.forEach((task, index) => {
+  filteredTasks.forEach((task) => {
     const li = document.createElement("li");
-    li.className = task.completed ? "completed" : "";
+    li.className = task.done ? "completed" : "";
 
     const span = document.createElement("span");
-    span.textContent = task.text;
-
-    const actions = document.createElement("div");
-    actions.className = "actions";
-
-    const completeBtn = document.createElement("button");
-    completeBtn.textContent = "✔";
-    completeBtn.className = "complete";
-    completeBtn.onclick = () => toggleTask(index);
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Hapus";
-    deleteBtn.className = "delete";
-    deleteBtn.onclick = () => deleteTask(index);
-
-    actions.appendChild(completeBtn);
-    actions.appendChild(deleteBtn);
+    span.textContent = task.task;
 
     li.appendChild(span);
-    li.appendChild(actions);
     taskList.appendChild(li);
   });
 
   document.getElementById("taskCount").textContent =
-    `${tasks.filter(t => !t.completed).length} tugas`;
-
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+    `${tasks.filter(t => !t.done).length} tugas`;
 }
 
-function addTask() {
+// Tambah tugas baru
+async function addTask() {
   const input = document.getElementById("taskInput");
   const text = input.value.trim();
 
@@ -54,30 +45,27 @@ function addTask() {
     return;
   }
 
-  tasks.push({ text: text, completed: false });
+  await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ task: text })
+  });
+
   input.value = "";
-  renderTasks();
+  fetchTodos(); // refresh daftar
 }
 
-function toggleTask(index) {
-  tasks[index].completed = !tasks[index].completed;
-  renderTasks();
-}
-
-function deleteTask(index) {
-  tasks.splice(index, 1);
-  renderTasks();
-}
-
+// Filter
 function setFilter(filter) {
   currentFilter = filter;
   renderTasks();
 }
 
+// Hapus yang selesai (butuh endpoint tambahan di backend)
 function deleteCompleted() {
-  tasks = tasks.filter(task => !task.completed);
+  tasks = tasks.filter(task => !task.done);
   renderTasks();
 }
 
-// Render saat pertama kali load
-renderTasks();
+// Load pertama kali
+fetchTodos();
