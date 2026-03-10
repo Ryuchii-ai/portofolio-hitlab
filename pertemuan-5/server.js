@@ -10,7 +10,7 @@ app.use(express.json());
 // Data sementara
 let todos = [];
 
-// Endpoint GET /api/todos
+// GET /api/todos
 app.get("/api/todos", (req, res) => {
   res.json({
     success: true,
@@ -19,7 +19,7 @@ app.get("/api/todos", (req, res) => {
   });
 });
 
-// Endpoint POST /api/todos
+// POST /api/todos
 app.post("/api/todos", (req, res) => {
   const newTodo = {
     id: todos.length + 1,
